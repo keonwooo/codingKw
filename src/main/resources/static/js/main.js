@@ -8,11 +8,11 @@ $(document).ready(function () {
         }
         
         let ajaxData = {
-            "type" : "get",
+            "type" : "post",
             "url" : "restApi/test_1",
             "dataType" : "json",
-            "data" : data
+            "params" : data
         }
-        callAjax(ajaxData);
+        kwfw.ajax(ajaxData);
     });
 });
