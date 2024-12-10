@@ -28,7 +28,7 @@ const kwfw = {
 
         return jQuery.ajax({
             url: option.url,
-            data: option.params,
+            data: JSON.stringify(option.params),
             async: option.async,
             timeout: option.timeout,
             type: option.type,

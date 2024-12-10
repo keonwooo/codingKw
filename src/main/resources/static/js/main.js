@@ -10,7 +10,24 @@ $(document).ready(function () {
         let ajaxData = {
             "type" : "post",
             "url" : "restApi/test_1",
-            "dataType" : "json",
+            "dataType" : "application/json",
+            "params" : data
+        }
+        kwfw.ajax(ajaxData);
+    });
+    
+    $("#test_2").on("click", function() {
+        let data = {
+            "a" : $("#a").val(),
+            "b" : $("#b").val(),
+            "c" : $("#c").val(),
+            "d" : $("#d").val(),
+        }
+        
+        let ajaxData = {
+            "type" : "post",
+            "url" : "restApi/test_2",
+            "dataType" : "application/json",
             "params" : data
         }
         kwfw.ajax(ajaxData);
