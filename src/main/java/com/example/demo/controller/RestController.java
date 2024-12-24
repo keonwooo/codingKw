@@ -97,7 +97,47 @@ public class RestController {
 
 
         // 모두 다른 경우
-        logger.info("{}",dice[0]);
-        return dice[0];
+//        logger.info("{}",dice[0]);
+//        return dice[0];
+		return 0;
+	}
+	
+	@ResponseBody
+	@PostMapping("/test_3")
+	public String test_3(@RequestBody Map<String, Object> param, Model model) {
+		
+		int[] index_list = {16, 6, 5, 3, 12, 14, 11, 11, 17, 12, 7};
+		String my_string = "cvsgiorszzzmrpaqpe";
+		char[] charArr = my_string.toCharArray();
+		String answer = "";
+		
+		for (int i = 0; i < index_list.length; i++) {
+			answer += charArr[index_list[i]];
+		}
+		
+		logger.info("test_3 ::: {}",answer);
+		
+		return "";
+	}
+	
+	@ResponseBody
+	@PostMapping("/test_4")
+	public String test_4() {
+		
+		int answer = 0;
+		
+		String number = "78720646226947352489";
+		
+		int cnt = 0;
+		for (int i = 0; i < number.length(); i++) {
+			int inx = number.charAt(i) - '0';
+			cnt += inx;
+		}
+		
+		answer = cnt % 9;
+		
+		logger.info("test_4 ::: {}", answer);
+		
+		return "";
 	}
 }

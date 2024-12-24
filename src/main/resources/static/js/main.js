@@ -32,4 +32,29 @@ $(document).ready(function () {
         }
         kwfw.ajax(ajaxData);
     });
+    
+    $("#test_3").on("click", function() {
+        let data = {
+            "str" : $("#my_string").val(),
+            "index" : $("#index").val()
+        }
+        
+        let ajaxData = {
+            "type" : "post",
+            "url" : "restApi/test_3",
+            "dataType" : "application/json",
+            "params" : data
+        }
+        kwfw.ajax(ajaxData);
+    });
+    
+    $("#test_4").on("click", function() {
+        
+        let ajaxData = {
+            "type" : "post",
+            "url" : "restApi/test_4",
+            "dataType" : "application/json",
+        }
+        kwfw.ajax(ajaxData);
+    });
 });
