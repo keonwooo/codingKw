@@ -140,4 +140,59 @@ public class RestController {
 		
 		return "";
 	}
+	
+	@ResponseBody
+	@PostMapping("/test_5")
+	public String test_5() {
+		
+		String answer = "";
+		
+		String my_string = "rermgorpsam";
+		int[][] queries = {{2, 3}, {0, 7}, {5, 9}, {6, 10}};
+		
+		for (int i = 0; i < queries.length; i++) {
+			int start = queries[i][0];
+			int end = queries[i][1];
+			
+			String temp2 = "";
+			for (int x = 0; x < my_string.length(); x++) {
+				String changeAft = "";
+				if (x == start) {
+					String temp = "";
+					for (int j = end; j >= start; j--) {
+						temp += my_string.charAt(j);
+					}
+					changeAft += temp;
+					x = end;
+				} else {
+					changeAft += my_string.charAt(x);
+				}
+				temp2 += changeAft;
+			}
+			my_string = temp2;
+		}
+		
+		logger.info(my_string);
+		
+		return "";
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
