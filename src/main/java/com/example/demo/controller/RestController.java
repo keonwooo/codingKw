@@ -269,6 +269,24 @@ public class RestController {
 	}
 	
 	@ResponseBody
+	@PostMapping("/test_10")
+	public int test_10() {
+		
+		String answer = "";
+		
+		String my_string = "banana";
+		String is_suffix = "ana";
+		
+		for (int i = 0; i < my_string.length(); i++) {
+			if (my_string.substring(i).equals(is_suffix)) {
+				return 1;
+			}
+		}
+		
+		return 0;
+	}
+	
+	@ResponseBody
 	@PostMapping("/test_")
 	public String test_() {
 		
