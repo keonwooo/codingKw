@@ -233,6 +233,51 @@ public class RestController {
 		
 		return "";
 	}
+	
+	@ResponseBody
+	@PostMapping("/test_8")
+	public String test_8() {
+		
+		String answer = "";
+		
+		String my_string = "He110W0r1d";
+		int n = 5;
+		
+		answer = my_string.substring(my_string.length() - n, my_string.length());
+		
+		logger.info("{}", answer);
+		
+		return answer;
+	}
+	
+	@ResponseBody
+	@PostMapping("/test_9")
+	public String test_9() {
+		
+		String answer = "";
+		
+		String my_string = "banana";
+		String[] stringArr = new String[my_string.length()];
+		for (int i = 0; i < my_string.length(); i++) {
+			stringArr[i] = my_string.substring(i);
+		}
+		Arrays.sort(stringArr);
+		
+		logger.info("{}", stringArr);
+		
+		return answer;
+	}
+	
+	@ResponseBody
+	@PostMapping("/test_")
+	public String test_() {
+		
+		String answer = "";
+		
+		logger.info("{}", answer);
+		
+		return answer;
+	}
 }
 
 

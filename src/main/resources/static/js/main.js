@@ -87,4 +87,34 @@ $(document).ready(function () {
         }
         kwfw.ajax(ajaxData);
     });
+    
+    $("#test_8").on("click", function() {
+        
+        let ajaxData = {
+            "type" : "post",
+            "url" : "restApi/test_8",
+            "dataType" : "application/json",
+        }
+        kwfw.ajax(ajaxData);
+    });
+    
+    $("#test_9").on("click", function() {
+        
+        let ajaxData = {
+            "type" : "post",
+            "url" : "restApi/test_9",
+            "dataType" : "application/json",
+        }
+        kwfw.ajax(ajaxData);
+    });
+    
+    $("#test_").on("click", function() {
+        
+        let ajaxData = {
+            "type" : "post",
+            "url" : "restApi/test_",
+            "dataType" : "application/json",
+        }
+        kwfw.ajax(ajaxData);
+    });
 });
