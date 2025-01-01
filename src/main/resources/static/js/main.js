@@ -67,4 +67,14 @@ $(document).ready(function () {
         }
         kwfw.ajax(ajaxData);
     });
+    
+    $("#test_6").on("click", function() {
+        
+        let ajaxData = {
+            "type" : "post",
+            "url" : "restApi/test_6",
+            "dataType" : "application/json",
+        }
+        kwfw.ajax(ajaxData);
+    });
 });

@@ -176,6 +176,33 @@ public class RestController {
 		
 		return "";
 	}
+	
+	@ResponseBody
+	@PostMapping("/test_6")
+	public String test_6() {
+		
+		String[] intStrs = {
+			"0123456789",
+			"9876543210",
+			"9999999999999"
+		};
+		int k = 50000;
+		int s = 5;
+		int l = 5;
+		
+		ArrayList<Integer> answer = new ArrayList<Integer>();
+		for (int i = 0; i < intStrs.length; i++) {
+			int temp = Integer.parseInt(intStrs[i].substring(s,s+l));
+			
+			if (k < temp) {
+				answer.add(temp);
+			}
+		}
+		
+		logger.info("{}", answer);
+		
+		return "";
+	}
 }
 
 
