@@ -303,6 +303,22 @@ public class RestController {
 	}
 	
 	@ResponseBody
+	@PostMapping("/test_12")
+	public String test_12() {
+		
+		String answer = "";
+		
+		String my_string = "banana";
+		String is_prefix = "ban";
+		
+		my_string.startsWith(is_prefix);
+		
+		logger.info("{}", answer);
+		
+		return answer;
+	}
+	
+	@ResponseBody
 	@PostMapping("/test_")
 	public String test_() {
 		
