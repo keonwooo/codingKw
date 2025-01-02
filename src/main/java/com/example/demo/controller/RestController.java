@@ -319,6 +319,34 @@ public class RestController {
 	}
 	
 	@ResponseBody
+	@PostMapping("/test_13")
+	public String test_13() {
+		
+		String answer = "";
+		
+		String my_string = "Progra21Sremm3";
+		int s = 6;
+		int e = 12;
+		
+		char[] my_char = my_string.toCharArray();
+		StringBuilder sb = new StringBuilder();
+		
+		int count = e;
+		for (int i = 0; i < my_char.length; i++) {
+			if (s <= i && i <= e) {
+				sb.append(my_char[count]);
+				count--;
+			} else if (i < s || e < i) {
+				sb.append(my_char[i]);
+			}
+		}
+		
+		logger.info("{}", sb.toString());
+		
+		return answer;
+	}
+	
+	@ResponseBody
 	@PostMapping("/test_")
 	public String test_() {
 		
