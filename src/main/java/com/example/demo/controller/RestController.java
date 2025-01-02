@@ -287,6 +287,22 @@ public class RestController {
 	}
 	
 	@ResponseBody
+	@PostMapping("/test_11")
+	public String test_11() {
+		
+		String answer = "";
+		
+		String my_string = "ProgrammerS123";
+		int n = 11;
+		
+		answer = my_string.substring(0,n);
+		
+		logger.info("{}", answer);
+		
+		return answer;
+	}
+	
+	@ResponseBody
 	@PostMapping("/test_")
 	public String test_() {
 		
