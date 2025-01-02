@@ -347,6 +347,36 @@ public class RestController {
 	}
 	
 	@ResponseBody
+	@PostMapping("/test_14")
+	public String test_14() {
+		
+		String answer = "";
+		String my_string = "ihrhbakrfpndopljhygc";
+		char[] charList = my_string.toCharArray();
+		int m = 4;
+		int c = 2;
+		int cnt = 0;
+		int div = charList.length / m;
+		char[][] tempChar = new char[div][m];
+		
+		StringBuilder sb = new StringBuilder();
+		
+		for (int i = 0; i < div; i++) {
+			for (int j = 0; j < m; j++) {
+				tempChar[i][j] = charList[cnt++];
+			}
+		}
+		
+		for (int i = 0; i < div; i++) {
+			sb.append(tempChar[i][c-1]);
+		}
+		
+		logger.info("{}", sb.toString());
+		
+		return answer;
+	}
+	
+	@ResponseBody
 	@PostMapping("/test_")
 	public String test_() {
 		
