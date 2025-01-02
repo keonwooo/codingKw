@@ -158,6 +158,16 @@ $(document).ready(function () {
         kwfw.ajax(ajaxData);
     });
     
+    $("#test_15").on("click", function() {
+        
+        let ajaxData = {
+            "type" : "post",
+            "url" : "restApi/test_15",
+            "dataType" : "application/json",
+        }
+        kwfw.ajax(ajaxData);
+    });
+    
     $("#test_").on("click", function() {
         
         let ajaxData = {

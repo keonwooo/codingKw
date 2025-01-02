@@ -377,6 +377,25 @@ public class RestController {
 	}
 	
 	@ResponseBody
+	@PostMapping("/test_15")
+	public String test_15() {
+		
+		String answer = "";
+		String code = "qjnwezgrpirldywt";
+		int q = 3;
+		int r = 1;
+		
+		StringBuilder sb = new StringBuilder();
+		for (; r < code.length(); r += q) {
+			sb.append(code.charAt(r));
+		}
+		
+		logger.info("{}", answer);
+		
+		return answer;
+	}
+	
+	@ResponseBody
 	@PostMapping("/test_")
 	public String test_() {
 		
