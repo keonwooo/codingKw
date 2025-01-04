@@ -474,6 +474,17 @@ public class RestController {
 	}
 	
 	@ResponseBody
+	@PostMapping("/test_19")
+	public String test_19() {
+		
+		String answer = "";
+		
+		logger.info("{}", answer);
+		
+		return answer;
+	}
+	
+	@ResponseBody
 	@PostMapping("/test_")
 	public String test_() {
 		
