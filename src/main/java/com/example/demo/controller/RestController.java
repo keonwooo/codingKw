@@ -427,6 +427,24 @@ public class RestController {
 	}
 	
 	@ResponseBody
+	@PostMapping("/test_17")
+	public int[] test_17() {
+		
+		int n = 10;
+		int k = 3;
+		int div = n / k;
+		int[] answer = new int[div];
+		
+		for (int i = 0; i < div; i++) {
+			answer[i] = (i + 1) * k;
+		}
+		
+		logger.info("{}", answer);
+		
+		return answer;
+	}
+	
+	@ResponseBody
 	@PostMapping("/test_")
 	public String test_() {
 		
