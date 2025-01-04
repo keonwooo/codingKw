@@ -485,6 +485,27 @@ public class RestController {
 	}
 	
 	@ResponseBody
+	@PostMapping("/test_20")
+	public int test_20() {
+		
+		String answer = "";
+		
+		int[] intArr = {0, 0, 0, 1};
+		int idx = 1;
+
+		for (int i = idx; i < intArr.length; i++) {
+			if (intArr[i] == 1) {
+				return i;
+			}
+		}
+		
+		
+		logger.info("{}", answer);
+		
+		return -1;
+	}
+	
+	@ResponseBody
 	@PostMapping("/test_")
 	public String test_() {
 		
