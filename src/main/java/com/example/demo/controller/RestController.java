@@ -506,6 +506,33 @@ public class RestController {
 	}
 	
 	@ResponseBody
+	@PostMapping("/test_21")
+	public int[] test_21() {
+		
+		String answer = "";
+//		int n = 1;
+//		int[] slicer = {1, 5, 2};
+//		int[] num_list = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+		int n = 4;
+		int[] slicer = {1, 5, 2};
+		int[] num_list = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+		
+		int a = slicer[0];
+		int b = slicer[1];
+		int c = slicer[2];
+		
+		int[] intArr = new int[n==1 ? b + 1 : n==2 ? num_list.length - b + 1 : n==3 ? b - a + 1 : n==4 ? ((b - a + 1) / c) + 1 : 0];
+		
+		for (int i = 0; i < intArr.length; i++) {
+			intArr[i] = n==1 ? num_list[i] : n==2 || n==3 ? num_list[a++] : num_list[a + (i * c)];
+		}
+		
+//		logger.info("{}", returnArr);
+		
+		return intArr;
+	}
+	
+	@ResponseBody
 	@PostMapping("/test_")
 	public String test_() {
 		
