@@ -445,6 +445,35 @@ public class RestController {
 	}
 	
 	@ResponseBody
+	@PostMapping("/test_18")
+	public String test_18() {
+		
+		String my_string = "apporoograpemmemprs";
+		int[] indices = {1, 16, 6, 15, 0, 10, 11, 3};
+		String answer = "";
+		
+		StringBuilder sb = new StringBuilder();
+		
+		for (int i = 0; i < my_string.length(); i++) {
+			boolean addFlag = true;
+			for (int j : indices) {
+				if (j == i) {
+					addFlag = false;
+					break;
+				}
+			}
+			
+			if (addFlag) {
+				sb.append(my_string.charAt(i));
+			}
+		}
+		
+		logger.info("{}", sb.toString());
+		
+		return answer;
+	}
+	
+	@ResponseBody
 	@PostMapping("/test_")
 	public String test_() {
 		
@@ -455,22 +484,3 @@ public class RestController {
 		return answer;
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
