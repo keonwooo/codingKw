@@ -396,6 +396,37 @@ public class RestController {
 	}
 	
 	@ResponseBody
+	@PostMapping("/test_16")
+	public String test_16() {
+		
+		String my_string = "Programmers";
+		
+		char[] charList = my_string.toCharArray();
+		int[] alpha = new int[52];
+		
+		logger.info("{}", (int)'A');
+		logger.info("{}", (int)'Z');
+		logger.info("{}", (int)'a');
+		logger.info("{}", (int)'z');
+		
+		for (int temp : charList) {
+			if (temp <= 90) {
+				int value = alpha[temp-65];
+				alpha[temp-65] = ++value;
+				logger.info("{}", alpha[temp-65]);
+			} else {
+				int value = alpha[temp-71];
+				alpha[temp-71] = ++value;
+				logger.info("{}", alpha[temp-71]);
+			}
+		}
+		
+		logger.info("{}", alpha);
+		
+		return "";
+	}
+	
+	@ResponseBody
 	@PostMapping("/test_")
 	public String test_() {
 		
