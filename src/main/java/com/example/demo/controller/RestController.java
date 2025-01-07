@@ -533,6 +533,24 @@ public class RestController {
 	}
 	
 	@ResponseBody
+	@PostMapping("/test_22")
+	public int test_22() {
+		
+		String answer = "";
+		int[] num_list = {12, 4, 15, 46, 38, -2, 15};
+		
+		for (int i = 0; i < num_list.length; i++) {
+			if (num_list[i] < 0) {
+				return i;
+			}
+		}
+		
+		logger.info("{}", answer);
+		
+		return 0;
+	}
+	
+	@ResponseBody
 	@PostMapping("/test_")
 	public String test_() {
 		
