@@ -551,6 +551,51 @@ public class RestController {
 	}
 	
 	@ResponseBody
+	@PostMapping("/test_23")
+	public String test_23() {
+		
+		String answer = "";
+		
+		logger.info("{}", answer);
+		
+		return answer;
+	}
+	
+	@ResponseBody
+	@PostMapping("/test_24")
+	public int[] test_24() {
+		
+		int[] arr = {1,2,3,4,5};
+		int[][] intervals = {{1,3},{0,4}};
+		
+		StringBuilder sb = new StringBuilder();
+		int cnt = 0;
+		for (int[] tempArr : intervals) {
+			int start = tempArr[0];
+			int end = tempArr[1];
+			
+			for (int i = start; i <= end; i++) {
+				if (cnt != 0) {
+					sb.append(",");
+				}
+				sb.append(arr[i]);
+				cnt++;
+			}
+		}
+		
+		String tempStr = sb.toString();
+		String[] tempArr = tempStr.split(",");
+		int[] answer = new int[tempArr.length];
+		for (int i = 0; i < tempArr.length; i++) {
+			answer[i] = Integer.parseInt(tempArr[i]);
+		}
+		
+		logger.info("{}", answer);
+		
+		return answer;
+	}
+	
+	@ResponseBody
 	@PostMapping("/test_")
 	public String test_() {
 		
