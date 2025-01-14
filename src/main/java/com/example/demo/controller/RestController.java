@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -593,6 +594,38 @@ public class RestController {
 		logger.info("{}", answer);
 		
 		return answer;
+	}
+	
+	@ResponseBody
+	@PostMapping("/test_25")
+	public int[] test_25() {
+		int[] arr = {1,2,1,4,5,2,9};
+		
+		int start = -1;
+		int end = -1;
+		
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == 2) {
+				if (start == -1) {
+					start = i;
+				}
+				end = i;
+			}
+		}
+		
+		if (start == -1) {
+			return new int[]{-1};
+		} else if (start == end) {
+			return new int[]{2};		
+		} else {
+			int total = end - start + 1;
+			int[] answer = new int[total];
+			
+			for (int i = 0; i < answer.length; i++) {
+				answer[i] = arr[start++];
+			}
+			return answer;
+		}
 	}
 	
 	@ResponseBody
